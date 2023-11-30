@@ -5,10 +5,13 @@ import HeadOfContent from "@/components/headOfContent";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/authOptions";
 import UnauthoriedUserView from "@/components/UnauthoriedUserView";
+import { Metadata } from "next";
 
-type Props = {};
+export const metadata: Metadata = {
+  title: "Categories - Lister",
+};
 
-export default async function Categories({}: Props) {
+export default async function Categories() {
   const session = await getServerSession(authOptions);
 
   const categories = await prisma.category.findMany({

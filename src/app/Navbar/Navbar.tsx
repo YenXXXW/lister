@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Logo from "@/assets/YenList.jpg";
+import Logo from "@/assets/Logo.png";
 import { getServerSession } from "next-auth";
 
 import { authOptions } from "../api/auth/[...nextauth]/authOptions";

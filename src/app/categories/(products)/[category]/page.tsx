@@ -2,24 +2,16 @@ import { prisma } from "@/lib/db/prisma";
 import React from "react";
 import ProductCard from "./ProductCard";
 import HeadOfContent from "@/components/headOfContent";
-import { unstable_cache } from "next/cache";
-import Link from "next/link";
+import { Metadata } from "next";
 
 interface ProductPageProps {
   params: { category: string };
   searchParams: { id: string };
 }
 
-// const getProduts = unstable_cache(
-//   async (id) =>
-//     await prisma.product.findMany({
-//       orderBy: { id: "desc" },
-//       where: {
-//         categoryId: id,
-//       },
-//     }),
-//   ["products"]
-// );
+export const metadata: Metadata = {
+  title: "Products - Lister",
+};
 
 export default async function Productpage({
   params: { category },
