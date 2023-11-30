@@ -28,5 +28,5 @@ export default async function Home() {
     );
   }
 
-  return redirect("/categories");
+  return <p>hi</p>;
 }
