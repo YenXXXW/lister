@@ -35,7 +35,7 @@ export function AuthButton({ user }: User) {
           </button>
         ) : (
           <button
-            onClick={() => signIn("google", { callbackUrl: "/categories" })}
+            onClick={() => signIn("", { callbackUrl: "/categories" })}
             className="btn bg-blue-600 text-white"
           >
             Sign In
