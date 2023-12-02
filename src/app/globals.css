@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply w-screen md:w-[800px] mx-10px md:m-auto  min-h-screen h-screen bg-[#ECEDEE] text-black;
+    @apply w-screen md:w-[800px] mx-[10px] md:m-auto  min-h-screen h-screen bg-[#ECEDEE] text-black;
   }
   form {
     @apply w-full flex flex-col gap-4;

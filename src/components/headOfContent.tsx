@@ -19,7 +19,7 @@ export default function HeadOfContent({
         {isProductsPage && (
           <Link
             href="/categories"
-            className="btn btn-outlined font-thin hover:border-2 border-slate-500"
+            className="btn btn-outlined bg-[#ECEDEE]  hover:border-2 border-slate-500 "
           >
             <svg
               width="21px"
