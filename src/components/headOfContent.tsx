@@ -42,7 +42,7 @@ export default function HeadOfContent({
         )}
 
         <Link href={navigateTo}>
-          <span className="text-3xl font-thin pr-2 ">+</span>
+          <span className="text-3xl text-[#063970] pr-2 ">+</span>
         </Link>
       </div>
     </div>

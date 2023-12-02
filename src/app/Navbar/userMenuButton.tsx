@@ -29,14 +29,14 @@ export function AuthButton({ user }: User) {
         {user ? (
           <button
             onClick={() => signOut({ callbackUrl: "/" })}
-            className="btn bg-blue-600 text-white"
+            className="btn btn-primary text-white"
           >
             Sign Out
           </button>
         ) : (
           <button
             onClick={() => signIn("", { callbackUrl: "/categories" })}
-            className="btn bg-blue-600 text-white"
+            className="btn btn-primary text-white"
           >
             Sign In
           </button>

@@ -33,8 +33,8 @@ export default function CategoryCard({ category }: CategoryCardProps) {
             >
               <path
                 d="M9 6L15 12L9 18"
-                stroke="#000000"
-                strokeWidth="1.3"
+                stroke="#063970"
+                strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               ></path>

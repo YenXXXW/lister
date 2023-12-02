@@ -12,7 +12,7 @@ export default async function Navbar() {
   const user = session?.user;
 
   return (
-    <nav className="navbar bg-base-100">
+    <nav className="navbar">
       <div className="navbar-start">
         <Link
           href={user ? "/categories" : "/"}
