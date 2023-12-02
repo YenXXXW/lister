@@ -7,6 +7,7 @@ import {
   updateCategorySeverAction,
 } from "../categoriesActions";
 import { Category } from "@prisma/client";
+import { useRouter } from "next/router";
 
 interface UpdateCategorypageProps {
   searchParams: { id: string };
@@ -19,6 +20,8 @@ export default function UpdateCategorypage({
   const [isPending, startTransition] = useTransition();
   const [inputValue, setInputValue] = useState("");
 
+  const router = useRouter();
+
   useEffect(() => {
     const getcategory = async () => {
       category = await getCategoryServerAction(id);
@@ -30,9 +33,10 @@ export default function UpdateCategorypage({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    startTransition(
-      async () => await updateCategorySeverAction(inputValue, id)
-    );
+    startTransition(async () => {
+      await updateCategorySeverAction(inputValue, id);
+      router.back();
+    });
   };
 
   return (
