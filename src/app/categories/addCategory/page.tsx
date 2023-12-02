@@ -20,7 +20,7 @@ export default function AddCategory() {
     });
   };
   return (
-    <div className="w-full px-44 h-full mt-5">
+    <div className="w-full md:px-44 h-full mt-5">
       <h2 className="addPageHeader">Add Category</h2>
       <form onSubmit={(e) => addCategory(e)}>
         <input

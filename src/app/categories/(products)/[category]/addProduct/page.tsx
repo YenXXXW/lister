@@ -31,7 +31,7 @@ export default function AddProductPage({
     });
   };
   return (
-    <div className="w-full px-44">
+    <div className="w-full md:px-44">
       <h2 className="addPageHeader">
         Add Product to <span className="text-blue-600">{category}</span>
       </h2>

@@ -36,7 +36,7 @@ export default function UpdateCategorypage({
   };
 
   return (
-    <div className="w-full px-10">
+    <div className="w-full md:px-10">
       <form className="w-full" onSubmit={(e) => handleSubmit(e)}>
         <label className="flex flex-col w-full">
           Category Name
