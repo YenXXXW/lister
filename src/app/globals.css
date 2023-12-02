@@ -4,14 +4,14 @@
 
 @layer base {
   body {
-    @apply md:w-[800px] m-auto  min-h-screen h-screen bg-[#ECEDEE] text-black;
+    @apply w-screen md:w-[800px] md:m-auto  min-h-screen h-screen bg-[#ECEDEE] text-black;
   }
   form {
     @apply w-full flex flex-col gap-4;
   }
 
   input {
-    @apply h-11 rounded-md px-2 border-slate-400 border-[1px]  w-full focus:outline-none;
+    @apply h-11 rounded-md px-2 border-slate-400 border-[1px]  w-full focus:outline-none bg-[#ECEDEE];
   }
 }
 
