@@ -50,7 +50,6 @@ export default function UpdateCategorypage({
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             tabIndex={0}
-            className="input border-slate-300 border-2 w-full  focus:outline-none"
           />
         </label>
         <button
