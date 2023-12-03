@@ -16,6 +16,9 @@ export default async function Categories() {
 
   const categories = await prisma.category.findMany({
     orderBy: { id: "desc" },
+    where: {
+      userId: session?.user.id,
+    },
   });
 
   if (!session) {
