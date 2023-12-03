@@ -23,6 +23,7 @@ export default async function Productpage({
       categoryId: id,
     },
   });
+  const categoryName = decodeURI(category);
   return (
     <div className="flex flex-col gap-2">
       <HeadOfContent
@@ -31,11 +32,15 @@ export default async function Productpage({
         navigateTo={category + "/addProduct" + `?id=${id}`}
       />
       <div className="w-full flex justify-between">
-        <h3 className="font-bold text-2xl">{category}</h3>
+        <h3 className="font-bold text-2xl">{categoryName}</h3>
       </div>
       {products.length === 0 && <p className="mt-4">No products added</p>}
       {products.map((product) => (
-        <ProductCard product={product} category={category} key={product.id} />
+        <ProductCard
+          product={product}
+          category={categoryName}
+          key={product.id}
+        />
       ))}
     </div>
   );

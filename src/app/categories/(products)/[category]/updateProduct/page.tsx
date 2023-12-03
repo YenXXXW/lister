@@ -15,7 +15,6 @@ type UpdateProductpageProps = {
 
 export default function UpdateProductpage({
   searchParams: { id },
-  params: { category },
 }: UpdateProductpageProps) {
   const [upateProductName, setUpdateProductName] = useState("");
   const [updatePrice, setUpdatePrice] = useState("");
@@ -31,7 +30,7 @@ export default function UpdateProductpage({
       product = await getProductServerAction(id);
       if (product) {
         setUpdateProductName(product.productName);
-        setUpdatePrice(product.price);
+        setUpdatePrice(product.price.toString());
       }
     };
 
@@ -44,7 +43,11 @@ export default function UpdateProductpage({
         onSubmit={(e) => {
           e.preventDefault();
           startTransition(async () => {
-            await UpadateProductServerAction(id, upateProductName, updatePrice);
+            await UpadateProductServerAction(
+              id,
+              upateProductName,
+              Number(updatePrice)
+            );
             router.back();
           });
         }}
@@ -52,6 +55,7 @@ export default function UpdateProductpage({
         <label>
           Product Name
           <input
+            type="text"
             required
             value={upateProductName}
             onChange={(e) => setUpdateProductName(e.target.value)}
@@ -60,6 +64,7 @@ export default function UpdateProductpage({
         <label>
           Product Price
           <input
+            type="number"
             required
             value={updatePrice}
             onChange={(e) => setUpdatePrice(e.target.value)}
@@ -74,6 +79,12 @@ export default function UpdateProductpage({
           {isPending && <span className="loading loading-spinner" />}
         </button>
       </form>
+      <button
+        className="btn btn-accent btn-outline mt-5"
+        onClick={() => router.back()}
+      >
+        back
+      </button>
     </div>
   );
 }

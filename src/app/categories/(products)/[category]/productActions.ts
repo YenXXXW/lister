@@ -16,7 +16,7 @@ export async function deleteProductServerAction(product: Product) {
 export async function addProductSeverAction(
   categoryId: string,
   productName: string,
-  price: string
+  price: number
 ) {
   if (!productName || !price || !categoryId) throw Error("Fields Missing");
 
@@ -40,10 +40,8 @@ export async function getProductServerAction(id: string) {
 export async function UpadateProductServerAction(
   id: string,
   updatedProductName: string,
-  updatedPrice: string
+  updatedPrice: number
 ) {
-  console.log(id);
-
   await getProductServerAction(id);
 
   if (!updatedProductName || !updatedPrice)

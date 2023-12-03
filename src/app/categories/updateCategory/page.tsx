@@ -7,7 +7,7 @@ import {
   updateCategorySeverAction,
 } from "../categoriesActions";
 import { Category } from "@prisma/client";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 interface UpdateCategorypageProps {
   searchParams: { id: string };
@@ -35,7 +35,6 @@ export default function UpdateCategorypage({
     e.preventDefault();
     startTransition(async () => {
       await updateCategorySeverAction(inputValue, id);
-      router.back();
     });
   };
 
@@ -64,6 +63,12 @@ export default function UpdateCategorypage({
           {isPending && <span className="loading loading-spinner" />}
         </button>
       </form>
+      <button
+        className="btn btn-accent btn-outline mt-5"
+        onClick={() => router.back()}
+      >
+        back
+      </button>
     </div>
   );
 }

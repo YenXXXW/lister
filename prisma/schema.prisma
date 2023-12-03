@@ -22,7 +22,7 @@ model Category {
 model Product {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   productName String
-  price       String
+  price       Int
   categoryId  String   @db.ObjectId
   category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   createdAt   DateTime @default(now())

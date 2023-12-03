@@ -20,11 +20,13 @@ export default function AddProductPage({
 
   const router = useRouter();
 
+  const categoryName = decodeURI(category);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSuccess(false);
     startTransition(async () => {
-      await addProductSeverAction(id, procuctName, price);
+      await addProductSeverAction(id, procuctName, Number(price));
       setIsSuccess(true);
       setProductName("");
       setPrice("");
@@ -33,7 +35,7 @@ export default function AddProductPage({
   return (
     <div className="w-full md:px-44">
       <h2 className="addPageHeader">
-        Add Product to <span className="text-blue-600">{category}</span>
+        Add Product to <span className="text-blue-600">{categoryName}</span>
       </h2>
       <form onSubmit={(e) => handleSubmit(e)}>
         <label className="flex flex-col">
@@ -52,11 +54,11 @@ export default function AddProductPage({
           Price
           <input
             name="price"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            type="text"
+            type="number"
             required
             placeholder="Price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
             tabIndex={0}
           />
         </label>
@@ -80,7 +82,7 @@ export default function AddProductPage({
           Go back
         </div>
         {!isPending && isSuccess && (
-          <span className="text-success">Added to {category}</span>
+          <span className="text-success">Added to {categoryName}</span>
         )}
       </div>
     </div>

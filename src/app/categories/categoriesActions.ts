@@ -34,7 +34,6 @@ export async function updateCategorySeverAction(
   newCategoryName: string,
   categoryId: string
 ) {
-  console.log(categoryId);
   if (!newCategoryName) throw Error("The Updated name must be filled");
 
   await prisma.category.update({
